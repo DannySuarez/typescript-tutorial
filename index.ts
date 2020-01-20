@@ -89,3 +89,25 @@ sayName({
   age: 29,
   name: 'Danny'
 });
+
+// Enums numeric & string based
+// Numeric
+enum Type {
+  Video, //0
+  BlogPost, //1
+  Quiz //2
+}
+
+const createContent = (contentType: Type) => {}
+createContent(0)
+
+// Strinng 
+enum Type2 {
+  Video = 'Videp',
+  BlogPost = 'Blog_Post',
+  Quiz = 'Quiz'
+}
+
+const createContent2 = (contentType: Type2) => {}
+createContent2(Type2.Quiz)
+console.log('type2.Quiz', Type2.Quiz); //Quiz
