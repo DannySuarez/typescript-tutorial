@@ -1,3 +1,5 @@
+import { Person, Type2, } from "./interfaces";
+
 const isOpen: boolean = false;
 
 const myName: string = 'Danny';
@@ -44,11 +46,11 @@ sayAnotherWord('Danny', 'Kami', 'Bezi');
 // implicit types in TS
 let newName = 'Danny';
 newName = 'Jon';
-newName = 10;
+//newName = 10;
 
 // Gets typed from initial decloration
 let newNameTwo: string = newName;
-newNameTwo = 23;
+//newNameTwo = 23;
 
 // Union types with TS
 const makeMargin = (x: string | number): string => {
@@ -62,14 +64,10 @@ makeMargin('10');
 let dog: string = 'Duncan';
 dog = null;
 dog = 'Bezi';
-dog = 4;
+//dog = 4;
 dog = undefined;
 
 // Interfaces
-interface Person {
-  name: string,
-  age?: number,
-}
 
 // const sayName = ({ name, age }: Person) : string => {
 //   console.log(name)
@@ -101,12 +99,7 @@ enum Type {
 const createContent = (contentType: Type) => {}
 createContent(0)
 
-// Strinng 
-enum Type2 {
-  Video = 'Videp',
-  BlogPost = 'Blog_Post',
-  Quiz = 'Quiz'
-}
+// String 
 
 const createContent2 = (contentType: Type2) => {}
 createContent2(Type2.Quiz)
@@ -134,3 +127,13 @@ const Blazers = new Team('Blazers');
 
 Blazers.score();
 Blazers.teamName;
+
+// Generics
+const outputInput = <T>(arg: T): T => {
+  return arg;
+}
+
+const output = outputInput('hi')
+console.log(output);
+
+outputInput(3)
