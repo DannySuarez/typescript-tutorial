@@ -137,3 +137,19 @@ const output = outputInput('hi')
 console.log(output);
 
 outputInput(3)
+
+// Duck Typing
+class Dancer implements Person {
+  name: string;
+  age?: number;  
+}
+
+let Danny: Person = new Dancer();
+
+//requirements are met 
+const fake = {
+  name: "danny",
+  year: 30
+}
+
+Danny = fake;
